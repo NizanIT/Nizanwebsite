@@ -240,7 +240,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
         }
 
         const fullDates = new Set<string>();
-        for (const [key, count] of bookingCountByDate.entries()) {
+        for (const [key, count] of Array.from(bookingCountByDate.entries())) {
           if (count >= BOOKING_CAPACITY_PER_DAY) {
             fullDates.add(key);
           }
