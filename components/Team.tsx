@@ -10,7 +10,7 @@ const team = [
     speciality: 'Lead Bridal Artist | Airbrush | Educator',
     bio: "One of India's most revered celebrity makeup artists with 10+ years of mastery and 2,000+ bridal transformations. Conducted 12 prestigious masterclasses across Kerala, Tamil Nadu & Dubai. Her artistry has graced celebrities, public figures, and thousands of cherished brides across South Asia and the UAE.",
     initials: 'FN',
-    accent: '#c9a227',
+    accent: '#e5d9cd',
     tag: 'Founder',
   },
   {
@@ -19,7 +19,7 @@ const team = [
     speciality: 'Strategy | Finance | Brand Architecture',
     bio: 'The strategic and financial architect of Nizan Makeovers. With sharp business acumen and a deep understanding of the luxury service landscape, Jasim has shaped Nizan Makeovers into the premium, globally reaching brand it is today.',
     initials: 'JR',
-    accent: '#c9a227',
+    accent: '#e5d9cd',
     tag: 'Co-Founder',
   },
 ];
@@ -44,7 +44,7 @@ export default function Team() {
       <div
         className="absolute left-1/2 -translate-x-1/2 top-0 w-[800px] h-[400px] pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse, rgba(201,162,39,0.05) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(229,217,205,0.05) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -71,7 +71,7 @@ export default function Team() {
             <span
               className="italic"
               style={{
-                background: 'linear-gradient(120deg, #c9a227 0%, #f0d060 50%, #c9a227 100%)',
+                background: 'linear-gradient(120deg, #d0bfae 0%, #f0ebe4 50%, #e5d9cd 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -111,7 +111,7 @@ export default function Team() {
               animate={inView ? 'visible' : 'hidden'}
               whileHover={{
                 y: -10,
-                boxShadow: '0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,162,39,0.35)',
+                boxShadow: '0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(229,217,205,0.35)',
               }}
               className="relative group bg-white/[0.04] border border-white/10 p-10 flex flex-col items-center text-center transition-all duration-400 cursor-pointer"
             >
@@ -125,7 +125,7 @@ export default function Team() {
               {/* Avatar initials circle */}
               <div
                 className="w-24 h-24 rounded-full flex items-center justify-center mb-6 text-2xl font-display font-semibold text-navy transition-transform duration-300 group-hover:scale-110"
-                style={{ background: 'linear-gradient(135deg, #c9a227 0%, #f0d060 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #d0bfae 0%, #f0ebe4 100%)' }}
               >
                 {member.initials}
               </div>

@@ -36,7 +36,7 @@ export default function Branches() {
       <div
         className="absolute -left-28 top-10 w-[520px] h-[520px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 72%)',
+          background: 'radial-gradient(circle, rgba(229,217,205,0.08) 0%, transparent 72%)',
           filter: 'blur(70px)',
         }}
       />

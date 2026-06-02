@@ -146,7 +146,7 @@ export default function Hero({ onBook }: HeroProps) {
                 <span
                   className="font-display"
                   style={{
-                    background: 'linear-gradient(120deg, #c9a227 0%, #f0d060 50%, #c9a227 100%)',
+                    background: 'linear-gradient(120deg, #d0bfae 0%, #f0ebe4 50%, #e5d9cd 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -176,7 +176,7 @@ export default function Hero({ onBook }: HeroProps) {
                 <button
                   id="hero-book-btn"
                   onClick={onBook}
-                  className="shimmer-btn group relative bg-gold text-navy text-[11px] font-bold tracking-[0.22em] uppercase px-9 py-4 transition-all duration-400 hover:bg-gold-light hover:shadow-[0_0_40px_rgba(201,162,39,0.65)] pulse-gold"
+                  className="shimmer-btn group relative bg-gold text-navy text-[11px] font-bold tracking-[0.22em] uppercase px-9 py-4 transition-all duration-400 hover:bg-gold-light hover:shadow-[0_0_40px_rgba(229,217,205,0.5)] pulse-gold"
                   style={{ borderRadius: 0 }}
                 >
                   Book Now

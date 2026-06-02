@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --navy: #0b1b3b;
-  --gold: #c9a227;
-  --gold-light: #e8c84a;
-  --gold-dark: #a07d1a;
-  --cream: #f9f5ef;
+  --navy: #121139;
+  --gold: #e5d9cd;
+  --gold-light: #f0ebe4;
+  --gold-dark: #d0bfae;
+  --cream: #e5d9cd;
   --white: #ffffff;
   --muted: #98a0b0;
 }
@@ -77,8 +77,8 @@ body {
 
 /* Pulsing gold button */
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.4); }
-  50% { box-shadow: 0 0 0 16px rgba(201, 162, 39, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(229, 217, 205, 0.4); }
+  50% { box-shadow: 0 0 0 16px rgba(229, 217, 205, 0); }
 }
 
 .pulse-gold {
@@ -97,7 +97,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #c9a227 0%, #e8c84a 50%, #c9a227 100%);
+  background: linear-gradient(135deg, #e5d9cd 0%, #f0ebe4 50%, #e5d9cd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,7 +107,7 @@ body {
 .glass-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 162, 39, 0.2);
+  border: 1px solid rgba(229, 217, 205, 0.2);
 }
 
 /* Section styles */
@@ -122,13 +122,13 @@ body {
 
 /* Portfolio overlay */
 .portfolio-overlay {
-  background: linear-gradient(to top, rgba(11, 27, 59, 0.95) 0%, rgba(11, 27, 59, 0.1) 100%);
+  background: linear-gradient(to top, rgba(18, 17, 57, 0.95) 0%, rgba(18, 17, 57, 0.1) 100%);
 }
 
 /* Form inputs */
 .form-input {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(201, 162, 39, 0.3);
+  border: 1px solid rgba(229, 217, 205, 0.3);
   color: white;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -136,7 +136,7 @@ body {
 .form-input:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
+  box-shadow: 0 0 0 3px rgba(229, 217, 205, 0.15);
 }
 
 .form-input::placeholder {
@@ -161,9 +161,9 @@ body {
 
 /* Living Gold Border */
 @keyframes living-border {
-  0% { border-color: rgba(201, 162, 39, 0.2); }
-  50% { border-color: rgba(201, 162, 39, 0.8); }
-  100% { border-color: rgba(201, 162, 39, 0.2); }
+  0% { border-color: rgba(229, 217, 205, 0.2); }
+  50% { border-color: rgba(229, 217, 205, 0.8); }
+  100% { border-color: rgba(229, 217, 205, 0.2); }
 }
 
 .animate-living-border {

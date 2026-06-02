@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Who We Are', href: '#who-we-are', pageHref: '/' },
   { label: 'Services', href: '#services', pageHref: '/' },
   { label: 'Our Works', href: '#portfolio', pageHref: '/' },
+  { label: 'Masterclasses', href: '/masterclasses', pageHref: '/masterclasses', isPage: true },
   { label: 'Our Team', href: '#team', pageHref: '/' },
   { label: 'Testimonials', href: '#testimonials', pageHref: '/' },
   { label: 'Contact', href: '#contact', pageHref: '/' },
@@ -74,7 +75,7 @@ export default function Header({ onBook }: HeaderProps) {
               width={200}
               height={100}
               className={`transition-all duration-500 object-contain w-auto h-auto ${
-                scrolled ? 'max-h-16 md:max-h-20' : 'max-h-24 md:max-h-32'
+                scrolled ? 'max-h-14 md:max-h-16' : 'max-h-16 md:max-h-20'
               }`}
               priority
             />
@@ -82,20 +83,24 @@ export default function Header({ onBook }: HeaderProps) {
         </motion.div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5">
           {navLinks.map((link) => (
             <Link
               key={link.label}
-              href={pathname === '/' ? link.href : link.pageHref}
+              href={link.isPage ? link.href : (pathname === '/' ? link.href : link.pageHref)}
               onClick={(e) => {
-                if (pathname === '/') {
+                if (!link.isPage && pathname === '/') {
                   e.preventDefault();
                   handleNavClick(link.href);
                 } else {
                   setMobileOpen(false);
                 }
               }}
-              className="text-xs font-medium tracking-[0.15em] uppercase text-white/70 hover:text-gold transition-colors duration-300 relative group"
+              className={`text-[11px] font-medium tracking-[0.08em] uppercase transition-colors duration-300 relative group whitespace-nowrap ${
+                pathname === '/masterclasses' && link.isPage
+                  ? 'text-gold'
+                  : 'text-white/70 hover:text-gold'
+              }`}
             >
               {link.label}
               <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full" />
@@ -108,7 +113,7 @@ export default function Header({ onBook }: HeaderProps) {
           <button
             id="header-book-btn"
             onClick={handleBooking}
-            className="shimmer-btn hidden lg:inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-navy text-xs font-semibold tracking-[0.15em] uppercase px-6 py-3 transition-all duration-300 hover:shadow-[0_0_24px_rgba(201,162,39,0.5)]"
+            className="shimmer-btn hidden lg:inline-flex items-center gap-2 bg-gold hover:bg-gold-light text-navy text-[11px] font-semibold tracking-[0.1em] uppercase px-5 py-2.5 transition-all duration-300 hover:shadow-[0_0_24px_rgba(229,217,205,0.4)]"
             style={{ borderRadius: 0 }}
           >
             Book Now
@@ -145,9 +150,9 @@ export default function Header({ onBook }: HeaderProps) {
                   className="text-sm font-medium tracking-[0.15em] uppercase text-white/70 hover:text-gold transition-colors"
                 >
                   <Link
-                    href={pathname === '/' ? link.href : link.pageHref}
+                    href={link.isPage ? link.href : (pathname === '/' ? link.href : link.pageHref)}
                     onClick={(e) => {
-                      if (pathname === '/') {
+                      if (!link.isPage && pathname === '/') {
                         e.preventDefault();
                         handleNavClick(link.href);
                       } else {

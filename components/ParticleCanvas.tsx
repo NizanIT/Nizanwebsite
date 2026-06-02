@@ -126,9 +126,9 @@ export default function ParticleCanvas({ isMobile = false }: ParticleCanvasProps
 
         // Outer glow
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 2.5);
-        gradient.addColorStop(0, '#e8c84a');
-        gradient.addColorStop(0.4, '#c9a227');
-        gradient.addColorStop(1, 'rgba(201, 162, 39, 0)');
+        gradient.addColorStop(0, '#f0ebe4');
+        gradient.addColorStop(0.4, '#e5d9cd');
+        gradient.addColorStop(1, 'rgba(229, 217, 205, 0)');
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * 2.5, 0, Math.PI * 2);
@@ -138,7 +138,7 @@ export default function ParticleCanvas({ isMobile = false }: ParticleCanvasProps
         // Core
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * 0.5, 0, Math.PI * 2);
-        ctx.fillStyle = '#f5e08a';
+        ctx.fillStyle = '#f0ebe4';
         ctx.fill();
 
         ctx.restore();

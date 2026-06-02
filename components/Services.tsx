@@ -79,7 +79,7 @@ export default function Services() {
                 animate={inView ? 'visible' : 'hidden'}
                 whileHover={{
                   y: -8,
-                  boxShadow: '0 20px 60px rgba(11,27,59,0.12), 0 0 0 1px rgba(201,162,39,0.4)',
+                  boxShadow: '0 20px 60px rgba(11,27,59,0.12), 0 0 0 1px rgba(229,217,205,0.4)',
                 }}
                 className="relative bg-white border border-navy/10 rounded-none p-10 flex flex-col text-center group cursor-pointer transition-all duration-400"
                 style={{ boxShadow: '0 4px 24px rgba(11,27,59,0.06)' }}

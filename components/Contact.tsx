@@ -76,7 +76,7 @@ export default function Contact() {
         className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(229,217,205,0.06) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
       />
@@ -239,7 +239,7 @@ export default function Contact() {
                   id="contact-submit-btn"
                   type="submit"
                   disabled={submitting}
-                  className="shimmer-btn w-full bg-gold hover:bg-gold-light text-navy text-[11px] font-bold tracking-[0.22em] uppercase py-4 transition-all duration-400 hover:shadow-[0_0_40px_rgba(201,162,39,0.55)]"
+                  className="shimmer-btn w-full bg-gold hover:bg-gold-light text-navy text-[11px] font-bold tracking-[0.22em] uppercase py-4 transition-all duration-400 hover:shadow-[0_0_40px_rgba(229,217,205,0.4)]"
                   style={{ borderRadius: 0 }}
                 >
                   {submitting ? 'Sending...' : 'Send Message'}

@@ -10,17 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#0b1b3b",
-          light: "#122040",
-          dark: "#060f22",
+          DEFAULT: "#121139",
+          light: "#1e1d52",
+          dark: "#0a091f",
         },
         gold: {
-          DEFAULT: "#c9a227",
-          light: "#e8c84a",
-          dark: "#a07d1a",
-          muted: "rgba(201, 162, 39, 0.15)",
+          DEFAULT: "#e5d9cd",
+          light: "#f0ebe4",
+          dark: "#d0bfae",
+          muted: "rgba(229, 217, 205, 0.15)",
         },
-        cream: "#f9f5ef",
+        cream: "#e5d9cd",
       },
       fontFamily: {
         display: ["Playfair Display", "Georgia", "serif"],
@@ -47,8 +47,8 @@ const config: Config = {
           to: { width: "100%" },
         },
         pulseGold: {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(201, 162, 39, 0.4)" },
-          "50%": { boxShadow: "0 0 0 16px rgba(201, 162, 39, 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(229, 217, 205, 0.4)" },
+          "50%": { boxShadow: "0 0 0 16px rgba(229, 217, 205, 0)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
@@ -56,9 +56,9 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "gold-gradient": "linear-gradient(135deg, #c9a227 0%, #e8c84a 50%, #c9a227 100%)",
-        "navy-gradient": "linear-gradient(135deg, #0b1b3b 0%, #122040 100%)",
-        "hero-overlay": "linear-gradient(to right, rgba(11, 27, 59, 0.92) 0%, rgba(11, 27, 59, 0.5) 60%, rgba(11, 27, 59, 0.1) 100%)",
+        "gold-gradient": "linear-gradient(135deg, #e5d9cd 0%, #f0ebe4 50%, #e5d9cd 100%)",
+        "navy-gradient": "linear-gradient(135deg, #121139 0%, #1e1d52 100%)",
+        "hero-overlay": "linear-gradient(to right, rgba(18, 17, 57, 0.92) 0%, rgba(18, 17, 57, 0.5) 60%, rgba(18, 17, 57, 0.1) 100%)",
       },
     },
   },

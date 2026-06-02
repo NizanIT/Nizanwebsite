@@ -40,7 +40,7 @@ export default function About() {
       <div
         className="absolute -right-40 top-1/2 -translate-y-1/2 w-[640px] h-[640px] rounded-full pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(201,162,39,0.07) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(229,217,205,0.07) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -51,7 +51,7 @@ export default function About() {
         <div className="text-center mb-20">
           <motion.span
             {...fadeUp(0)}
-            className="text-gold text-[11px] font-medium tracking-[0.3em] uppercase mb-4 block"
+            className="text-navy/50 text-[11px] font-medium tracking-[0.3em] uppercase mb-4 block"
           >
             Our Story
           </motion.span>
@@ -66,7 +66,7 @@ export default function About() {
             className="flex items-center gap-4 max-w-xs mx-auto"
           >
             <div className="flex-1 h-px bg-navy/15" />
-            <span className="text-gold/60 text-sm">✦</span>
+            <span className="text-navy/30 text-sm">✦</span>
             <div className="flex-1 h-px bg-navy/15" />
           </motion.div>
         </div>
@@ -81,19 +81,19 @@ export default function About() {
               {...fadeUp(0.2)}
               className="text-navy/80 text-lg leading-[1.9] font-light"
             >
-              <span className="text-gold font-semibold">Nizan Makeovers</span> is a top celebrity makeup artist in Kerala, founded by <span className="text-navy font-medium">Feeniya Nizan</span>, a leading professional makeup artist. We specialize in bridal makeup, wedding makeup, and celebrity beauty services. As a trusted bridal makeup artist and bridal makeup specialist, we offer premium bridal makeup services, including celebrity makeup and customized bridal looks.
+              <span className="text-navy font-bold">Nizan Makeovers</span> is a top celebrity makeup artist in Kerala, founded by <span className="text-navy font-semibold">Feeniya Nizan</span>, a leading professional makeup artist. We specialize in bridal makeup, wedding makeup, and celebrity beauty services. As a trusted bridal makeup artist and bridal makeup specialist, we offer premium bridal makeup services, including celebrity makeup and customized bridal looks.
             </motion.p>
 
             <motion.p
               {...fadeUp(0.28)}
               className="text-navy/60 text-base leading-[1.9] font-light"
             >
-              Our expertise in <span className="text-gold font-medium">Airbrush and Signature Makeup</span> ensures flawless, long-lasting results. If you are looking for a bridal makeup artist in Kerala, Nizan Makeovers delivers a luxury beauty experience with perfection and elegance. Nizan Makeovers is also the parent company of <span className="text-gold font-medium">Team N Makeovers</span>, a fast-growing beauty brand across Kerala and Tamil Nadu. Together, we continue to set high standards in the industry through expert services, strong team presence, and professional excellence.
+              Our expertise in <span className="text-navy font-semibold">Airbrush and Signature Makeup</span> ensures flawless, long-lasting results. If you are looking for a bridal makeup artist in Kerala, Nizan Makeovers delivers a luxury beauty experience with perfection and elegance. Nizan Makeovers is also the parent company of <span className="text-navy font-semibold">Team N Makeovers</span>, a fast-growing beauty brand across Kerala and Tamil Nadu. Together, we continue to set high standards in the industry through expert services, strong team presence, and professional excellence.
             </motion.p>
 
             {/* Specialties grid */}
             <motion.div {...fadeUp(0.36)}>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4 font-medium">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-navy/50 mb-4 font-medium">
                 Our Specialties
               </p>
               <div className="grid grid-cols-2 gap-x-6 gap-y-3">
@@ -112,7 +112,7 @@ export default function About() {
               className="flex items-center gap-4"
             >
               <div className="flex-1 h-px bg-navy/10" />
-              <span className="text-gold/50 text-xs">✦</span>
+              <span className="text-navy/30 text-xs">✦</span>
               <div className="flex-1 h-px bg-navy/10" />
             </motion.div>
 
@@ -123,7 +123,7 @@ export default function About() {
             >
               {highlights.map((h) => (
                 <div key={h.label} className="text-center">
-                  <p className="font-display text-2xl md:text-3xl text-gold font-semibold">
+                  <p className="font-display text-2xl md:text-3xl text-navy font-semibold">
                     {h.value}
                   </p>
                   <p className="text-navy/45 text-[10px] tracking-[0.2em] uppercase mt-1 leading-tight">
@@ -158,7 +158,7 @@ export default function About() {
                   <p className="font-display text-white text-xl font-light italic drop-shadow-lg">
                     Feeniya Nizan
                   </p>
-                  <p className="text-gold text-[11px] tracking-[0.28em] uppercase mt-1 drop-shadow-lg">
+                  <p className="text-white/80 text-[11px] tracking-[0.28em] uppercase mt-1 drop-shadow-lg">
                     Founder & Celebrity Makeup Artist
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export default function About() {
               transition={{ delay: 0.55, duration: 0.7, ease: [0.22, 1, 0.36, 1] as const }}
               className="absolute -left-6 bottom-16 bg-navy/90 backdrop-blur-md border border-gold/25 px-6 py-5 shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
             >
-              <p className="font-display text-3xl text-gold font-semibold">8+</p>
+              <p className="font-display text-3xl text-white font-semibold">8+</p>
               <p className="text-white/60 text-[10px] tracking-widest uppercase mt-1">
                 Years of Excellence
               </p>

@@ -159,7 +159,7 @@ export default function MasterclassAnnouncement() {
                   href={displayData.registration_url || WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="shimmer-btn inline-flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-400 hover:shadow-[0_0_30px_rgba(201,162,39,0.4)]"
+                  className="shimmer-btn inline-flex items-center justify-center gap-3 bg-gold text-navy px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-400 hover:shadow-[0_0_30px_rgba(229,217,205,0.4)]"
                 >
                   Register Now
                   <ArrowRight size={16} />

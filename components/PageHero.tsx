@@ -15,7 +15,7 @@ export default function PageHero({ eyebrow, title, description }: PageHeroProps)
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle at top, rgba(201,162,39,0.08) 0%, transparent 50%)',
+            'radial-gradient(circle at top, rgba(229,217,205,0.08) 0%, transparent 50%)',
         }}
       />
 

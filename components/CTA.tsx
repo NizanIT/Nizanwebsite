@@ -99,7 +99,7 @@ export default function CTA({ onBook }: CTAProps) {
           <button
             id="cta-book-btn"
             onClick={onBook}
-            className="shimmer-btn pulse-gold bg-gold hover:bg-gold-light text-navy text-sm font-semibold tracking-[0.2em] uppercase px-12 py-5 transition-all duration-400 hover:shadow-[0_0_50px_rgba(201,162,39,0.7)]"
+            className="shimmer-btn pulse-gold bg-gold hover:bg-gold-light text-navy text-sm font-semibold tracking-[0.2em] uppercase px-12 py-5 transition-all duration-400 hover:shadow-[0_0_50px_rgba(229,217,205,0.5)]"
             style={{ borderRadius: 0 }}
           >
             Book Your Makeover Today
