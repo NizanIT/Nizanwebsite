@@ -88,7 +88,7 @@ export default function About() {
               {...fadeUp(0.28)}
               className="text-navy/60 text-base leading-[1.9] font-light"
             >
-              We master both <span className="text-navy font-semibold">Airbrush and Signature Makeup</span> techniques — each chosen to suit your skin, event, and vision. Beyond our main studio in Kerala, Nizan Makeovers founded <span className="text-navy font-semibold">Team N Makeovers</span>, a thriving beauty brand now present across Kerala and Tamil Nadu. Together, we've transformed over 2,000 brides and continue to set the standard for luxury bridal artistry in South Asia.
+              We master both <span className="text-navy font-semibold">Airbrush and Signature Makeup</span> techniques — each chosen to suit your skin, event, and vision. Beyond our main studio in Kerala, Nizan Makeovers founded <span className="text-navy font-semibold">Team N Makeovers</span>, a thriving beauty brand now present across Kerala and Tamil Nadu. Together, we&apos;ve transformed over 2,000 brides and continue to set the standard for luxury bridal artistry in South Asia.
             </motion.p>
 
             {/* Specialties grid */}

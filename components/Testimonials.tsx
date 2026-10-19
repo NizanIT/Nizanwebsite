@@ -114,7 +114,7 @@ export default function Testimonials() {
           ref={emblaRef}
         >
           <div className="flex gap-6">
-            {testimonials.map((t, i) => (
+            {testimonials.map((t) => (
               <div
                 key={t.name}
                 className="flex-none w-[85vw] sm:w-[60vw] md:w-[45vw] lg:w-[calc(33.33%-16px)]"
