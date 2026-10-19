@@ -4,9 +4,28 @@ import PageHero from '@/components/PageHero';
 import Services from '@/components/Services';
 
 export const metadata: Metadata = {
-  title: 'Bridal Makeup Services | Nizan Makeovers',
+  title: 'Bridal & Airbrush Makeup Services | Nizan Makeovers Kerala',
   description:
-    'Explore Nizan Makeovers bridal and signature makeup services crafted for weddings, engagements, editorial shoots, and luxury beauty events.',
+    'Professional bridal makeup, airbrush makeup, and signature beauty services for weddings, engagements, and special events across Kerala and India.',
+  openGraph: {
+    title: 'Bridal & Airbrush Makeup Services | Nizan Makeovers',
+    description: 'Luxury bridal and signature makeup services for your special day.',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Bridal Makeup Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bridal & Airbrush Makeup Services | Nizan Makeovers',
+    description: 'Luxury bridal and signature makeup services for your special day.',
+    images: ['/og-image.jpg'],
+  },
 };
 
 export default function ServicesPage() {

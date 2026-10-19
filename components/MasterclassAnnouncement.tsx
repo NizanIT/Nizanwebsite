@@ -38,13 +38,15 @@ export default function MasterclassAnnouncement() {
           .maybeSingle();
         
         if (error) console.error('Supabase error:', error);
-        if (mc) setData(mc);
+        if (mc) {
+          setData(mc);
+          // Show popup after 1.5 seconds delay only when an active announcement exists
+          setTimeout(() => setIsOpen(true), 1500);
+        }
       } catch (err) {
         console.error('Error fetching masterclass:', err);
       } finally {
         setLoading(false);
-        // Show popup after 1.5 seconds delay
-        setTimeout(() => setIsOpen(true), 1500);
       }
     };
 
@@ -61,15 +63,11 @@ export default function MasterclassAnnouncement() {
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
 
-  if (loading && !isOpen) return null;
+  if (loading || !isOpen || !data) return null;
 
-  const displayData = data || {
-    title: 'Upcoming Masterclass 2025',
-    description: 'Join our professional bridal transformation masterclass. Level up your skills with industry-leading techniques.',
-    date_range: 'Announcing Soon',
-    location: 'Nizan Studio',
-    image_url: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2087&auto=format&fit=crop',
-    registration_url: '#'
+  const displayData = {
+    ...data,
+    image_url: data.image_url || 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2087&auto=format&fit=crop'
   };
 
   return (

@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { postToErp } from '@/lib/erp';
@@ -108,40 +109,71 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left — contact info */}
           <motion.div {...fadeUp(0.25)} className="space-y-10">
-            {[
-              {
-                icon: '📍',
-                label: 'Studio Location',
-                value: 'Available on request — home visits warmly welcomed India · UAE · Malaysia',
-              },
-              {
-                icon: '📞',
-                label: 'Phone / WhatsApp',
-                value: '+91 97465 14181',
-              },
-              {
-                icon: '✉️',
-                label: 'Email',
-                value: 'nizanmakeovers@gmail.com',
-              },
-              {
-                icon: '🕐',
-                label: 'Working Hours',
-                value: 'Always Open',
-              },
-            ].map((item) => (
-              <div key={item.label} className="flex gap-5 items-start">
-                <div className="w-11 h-11 border border-gold/30 flex items-center justify-center text-lg shrink-0">
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">
-                    {item.label}
-                  </p>
-                  <p className="text-white/80 text-base">{item.value}</p>
-                </div>
+            {/* Location */}
+            <div className="flex gap-5 items-start">
+              <div className="w-11 h-11 border border-gold/30 flex items-center justify-center text-lg shrink-0">
+                📍
               </div>
-            ))}
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">
+                  Studio Location
+                </p>
+                <p className="text-white/80 text-base">
+                  Available on request — home visits warmly welcomed
+                  <br />
+                  India · UAE · Malaysia
+                </p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex gap-5 items-start">
+              <div className="w-11 h-11 border border-gold/30 flex items-center justify-center text-lg shrink-0">
+                📞
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">
+                  Phone / WhatsApp
+                </p>
+                <Link
+                  href="tel:+919746514181"
+                  className="text-white/80 hover:text-gold text-base transition-colors duration-300"
+                >
+                  +91 97465 14181
+                </Link>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex gap-5 items-start">
+              <div className="w-11 h-11 border border-gold/30 flex items-center justify-center text-lg shrink-0">
+                ✉️
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">
+                  Email
+                </p>
+                <Link
+                  href="mailto:nizanmakeovers@gmail.com"
+                  className="text-white/80 hover:text-gold text-base transition-colors duration-300"
+                >
+                  nizanmakeovers@gmail.com
+                </Link>
+              </div>
+            </div>
+
+            {/* Hours */}
+            <div className="flex gap-5 items-start">
+              <div className="w-11 h-11 border border-gold/30 flex items-center justify-center text-lg shrink-0">
+                🕐
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-gold/70 mb-1">
+                  Working Hours
+                </p>
+                <p className="text-white/80 text-base">Always Open</p>
+              </div>
+            </div>
 
             {/* Ornamental divider */}
             <div className="flex items-center gap-4 pt-4">

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { supabase } from '@/lib/supabase';
-import { Save, Loader2, Upload, Calendar, MapPin, Link as LinkIcon } from 'lucide-react';
+import { Save, Loader2, Upload, Calendar, MapPin, Link as LinkIcon, Trash2, AlertCircle } from 'lucide-react';
 import { toast } from 'react-hot-toast';
 
 interface Masterclass {
@@ -21,6 +21,7 @@ export default function MasterclassAdmin() {
   const [data, setData] = useState<Masterclass | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -38,21 +39,33 @@ export default function MasterclassAdmin() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data: mc } = await supabase
+      const { data: mc, error } = await supabase
         .from('masterclass')
         .select('*')
         .order('created_at', { ascending: false })
         .limit(1)
-        .single();
+        .maybeSingle();
       
+      if (error) {
+        console.error('Fetch error:', error);
+      }
+
       if (mc) {
         setData(mc);
-        setTitle(mc.title);
-        setDescription(mc.description);
-        setDateRange(mc.date_range);
-        setLocation(mc.location);
-        setRegUrl(mc.registration_url);
-        setPreviewUrl(mc.image_url);
+        setTitle(mc.title || '');
+        setDescription(mc.description || '');
+        setDateRange(mc.date_range || '');
+        setLocation(mc.location || '');
+        setRegUrl(mc.registration_url || '');
+        setPreviewUrl(mc.image_url || null);
+      } else {
+        setData(null);
+        setTitle('');
+        setDescription('');
+        setDateRange('');
+        setLocation('');
+        setRegUrl('');
+        setPreviewUrl(null);
       }
     } catch (err) {
       console.error('Fetch error:', err);
@@ -66,6 +79,41 @@ export default function MasterclassAdmin() {
       const file = e.target.files[0];
       setSelectedFile(file);
       setPreviewUrl(URL.createObjectURL(file));
+    }
+  };
+
+  const handleDelete = async () => {
+    if (!data?.id) return;
+
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this masterclass announcement? This will remove the popup announcement from the website.'
+    );
+    if (!confirmed) return;
+
+    setDeleting(true);
+    try {
+      const { error: deleteError } = await supabase
+        .from('masterclass')
+        .delete()
+        .eq('id', data.id);
+
+      if (deleteError) throw deleteError;
+
+      toast.success('Masterclass announcement deleted successfully');
+      setData(null);
+      setTitle('');
+      setDescription('');
+      setDateRange('');
+      setLocation('');
+      setRegUrl('');
+      setSelectedFile(null);
+      setPreviewUrl(null);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Delete failed';
+      toast.error(message);
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -105,7 +153,8 @@ export default function MasterclassAdmin() {
         location,
         registration_url: regUrl,
         image_url: imageUrl,
-        status: 'active'
+        status: 'active',
+        updated_at: new Date().toISOString()
       };
 
       if (data?.id) {
@@ -114,14 +163,16 @@ export default function MasterclassAdmin() {
           .update(payload)
           .eq('id', data.id);
         if (updateError) throw updateError;
+        toast.success('Masterclass updated successfully');
       } else {
         const { error: insertError } = await supabase
           .from('masterclass')
           .insert([payload]);
         if (insertError) throw insertError;
+        toast.success('Masterclass announcement published successfully');
       }
 
-      toast.success('Masterclass updated successfully');
+      setSelectedFile(null);
       fetchData();
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : 'Update failed';
@@ -141,12 +192,44 @@ export default function MasterclassAdmin() {
 
   return (
     <div className="space-y-10 pb-20">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="font-display text-4xl text-white font-light tracking-tight mb-2">Masterclass</h2>
+          <div className="flex items-center gap-3 mb-2">
+            <h2 className="font-display text-4xl text-white font-light tracking-tight">Masterclass</h2>
+            {data ? (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                Active Announcement
+              </span>
+            ) : (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase bg-white/5 text-white/40 border border-white/10">
+                No Active Announcement
+              </span>
+            )}
+          </div>
           <p className="text-white/40 text-xs tracking-[0.2em] uppercase font-bold">Manage class announcements</p>
         </div>
+
+        {data && (
+          <button
+            type="button"
+            onClick={handleDelete}
+            disabled={deleting || saving}
+            className="self-start sm:self-auto bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20 hover:border-red-500 font-bold text-xs tracking-[0.15em] uppercase px-5 py-3 flex items-center gap-2.5 transition-all disabled:opacity-50"
+          >
+            {deleting ? <Loader2 className="animate-spin" size={16} /> : <Trash2 size={16} />}
+            Delete Announcement
+          </button>
+        )}
       </div>
+
+      {!data && (
+        <div className="flex items-start gap-3 bg-white/[0.03] border border-white/10 p-5 text-white/60 text-xs leading-relaxed">
+          <AlertCircle className="text-gold shrink-0 mt-0.5" size={18} />
+          <div>
+            There is currently no active masterclass announcement on the website. Fill in the form below and click <span className="text-gold font-bold">Publish Announcement</span> to post one.
+          </div>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2">
@@ -210,14 +293,28 @@ export default function MasterclassAdmin() {
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={saving}
-              className="bg-gold text-navy font-black text-xs tracking-[0.2em] uppercase px-12 py-5 flex items-center gap-3 hover:bg-gold/90 transition-all disabled:opacity-50"
-            >
-              {saving ? <Loader2 className="animate-spin" /> : <Save size={18} />}
-              Update Announcement
-            </button>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <button
+                type="submit"
+                disabled={saving || deleting}
+                className="bg-gold text-navy font-black text-xs tracking-[0.2em] uppercase px-10 py-5 flex items-center gap-3 hover:bg-gold/90 transition-all disabled:opacity-50"
+              >
+                {saving ? <Loader2 className="animate-spin" size={18} /> : <Save size={18} />}
+                {data ? 'Update Announcement' : 'Publish Announcement'}
+              </button>
+
+              {data && (
+                <button
+                  type="button"
+                  onClick={handleDelete}
+                  disabled={saving || deleting}
+                  className="bg-red-500/10 border border-red-500/30 text-red-400 hover:bg-red-500/20 hover:border-red-500 font-bold text-xs tracking-[0.2em] uppercase px-8 py-5 flex items-center gap-2.5 transition-all disabled:opacity-50"
+                >
+                  {deleting ? <Loader2 className="animate-spin" size={18} /> : <Trash2 size={18} />}
+                  Delete Announcement
+                </button>
+              )}
+            </div>
           </form>
         </div>
 

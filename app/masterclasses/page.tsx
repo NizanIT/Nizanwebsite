@@ -4,21 +4,36 @@ import PageHero from '@/components/PageHero';
 import PreviousMasterclasses from '@/components/PreviousMasterclasses';
 
 export const metadata: Metadata = {
-  title: 'Previous Masterclasses | Nizan Makeovers',
+  title: 'Makeup Masterclasses | Nizan Makeovers | Professional Training',
   description:
-    'Explore all previous bridal and editorial makeup masterclasses conducted by Nizan Makeovers. Hands-on workshops for aspiring and professional makeup artists.',
+    'Bridal makeup masterclasses and professional training workshops by Feeniya Nizan. Learn airbrush, signature makeup, and editorial beauty techniques.',
   keywords: [
-    'makeup masterclass',
+    'makeup masterclass Kerala',
     'bridal makeup training',
-    'Nizan Makeovers masterclass',
-    'makeup workshop Kerala',
+    'makeup workshop India',
     'professional makeup course',
+    'airbrush makeup training',
+    'Feeniya Nizan masterclass',
   ],
   openGraph: {
-    title: 'Previous Masterclasses | Nizan Makeovers',
+    title: 'Makeup Masterclasses | Nizan Makeovers',
     description:
-      'Discover past bridal and fashion makeup masterclasses by Nizan Makeovers — hands-on, luxury, and transformative.',
+      'Professional bridal and editorial makeup masterclasses by Feeniya Nizan — hands-on training for makeup artists.',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Makeup Masterclasses',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Makeup Masterclasses | Nizan Makeovers',
+    description: 'Professional bridal and editorial makeup masterclasses and training.',
+    images: ['/og-image.jpg'],
   },
 };
 

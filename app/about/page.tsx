@@ -6,9 +6,28 @@ import About from '@/components/About';
 import Branches from '@/components/Branches';
 
 export const metadata: Metadata = {
-  title: 'About Nizan Makeovers | Bridal Makeup Artists Across India',
+  title: "About Nizan Makeovers | Feeniya Nizan & Team",
   description:
-    'Learn about Nizan Makeovers, our luxury bridal artistry, expert team, signature specialties, and growing branches across India.',
+    "Meet Feeniya Nizan and the expert team behind Nizan Makeovers. 8+ years of luxury bridal expertise serving Kerala, India, and UAE.",
+  openGraph: {
+    title: "About Nizan Makeovers | Feeniya Nizan & Team",
+    description: "Learn the story of Kerala's premier bridal makeup studio.",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "About Nizan Makeovers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Nizan Makeovers | Feeniya Nizan",
+    description: "Learn the story of Kerala's premier bridal makeup studio.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function AboutPage() {

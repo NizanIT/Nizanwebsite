@@ -23,8 +23,8 @@ const config: Config = {
         cream: "#e5d9cd",
       },
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
+        body: ["var(--font-archivo)", "system-ui", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.8s ease forwards",

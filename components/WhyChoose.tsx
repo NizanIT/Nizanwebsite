@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Star, Gem, Heart, Crown } from 'lucide-react';
+import { Star, Gem, Heart, Crown, Sparkles } from 'lucide-react';
 
 const features = [
   {
@@ -30,7 +30,7 @@ const features = [
       'Over two thousand brides have sat in our chair and left feeling extraordinary. A decade of trust, precision, and radiant confidence. That is not a number — that is a legacy.',
   },
   {
-    icon: Gem,
+    icon: Sparkles,
     title: 'Masterclass · Celebrity · Bridal',
     description:
       "Celebrity shoots, masterclass training, and bridal mastery — Feeniya's multi-dimensional expertise brings a rare, extraordinary depth to every look she creates.",

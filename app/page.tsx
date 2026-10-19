@@ -4,6 +4,7 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import MarqueeTicker from '@/components/MarqueeTicker';
 import Footer from '@/components/Footer';
 import BookingModal from '@/components/BookingModal';
 import { WHATSAPP_URL } from '@/lib/constants';
@@ -31,7 +32,8 @@ export default function Home() {
     <main className={`min-h-screen ${isBookingOpen ? 'overflow-hidden' : ''}`}>
       <Header onBook={openBooking} />
       <Hero onBook={openBooking} />
-      
+      <MarqueeTicker />
+
       <MasterclassAnnouncement />
       
       <About />

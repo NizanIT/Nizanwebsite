@@ -102,7 +102,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs tracking-wide">
-            © 2025 Nizan Makeovers. All rights reserved.
+            © {new Date().getFullYear()} Nizan Makeovers. All rights reserved.
           </p>
           <p className="text-white/20 text-xs">
             Crafted with elegance &amp; passion ✦

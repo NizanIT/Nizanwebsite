@@ -1,0 +1,29 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "start",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "wedding",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "/Users/muhammedrisan/Desktop/wed",
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "3311"
+      ],
+      "port": 3311,
+      "autoPort": false
+    }
+  ]
+}

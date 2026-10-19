@@ -8,7 +8,7 @@ const highlights = [
   { label: 'Bridal Transformations', value: '2000+' },
   { label: 'Years Experience', value: '8+' },
   { label: 'Masterclasses', value: '10+' },
-  { label: 'Expert Artists', value: 'Team N' },
+  { label: 'Expert Team Members', value: '15+' },
 ];
 
 const specialties = [
@@ -81,14 +81,14 @@ export default function About() {
               {...fadeUp(0.2)}
               className="text-navy/80 text-lg leading-[1.9] font-light"
             >
-              <span className="text-navy font-bold">Nizan Makeovers</span> is a top celebrity makeup artist in Kerala, founded by <span className="text-navy font-semibold">Feeniya Nizan</span>, a leading professional makeup artist. We specialize in bridal makeup, wedding makeup, and celebrity beauty services. As a trusted bridal makeup artist and bridal makeup specialist, we offer premium bridal makeup services, including celebrity makeup and customized bridal looks.
+              <span className="text-navy font-bold">Nizan Makeovers</span> is founded by <span className="text-navy font-semibold">Feeniya Nizan</span>, a celebrated makeup artist and educator with 8+ years of expertise. We specialise in luxury bridal transformations, editorial beauty, and celebrity makeup services across India and the UAE. Our signature style combines precision artistry with a deep understanding of skin tone, cultural aesthetics, and the magic that makes each bride feel her most radiant.
             </motion.p>
 
             <motion.p
               {...fadeUp(0.28)}
               className="text-navy/60 text-base leading-[1.9] font-light"
             >
-              Our expertise in <span className="text-navy font-semibold">Airbrush and Signature Makeup</span> ensures flawless, long-lasting results. If you are looking for a bridal makeup artist in Kerala, Nizan Makeovers delivers a luxury beauty experience with perfection and elegance. Nizan Makeovers is also the parent company of <span className="text-navy font-semibold">Team N Makeovers</span>, a fast-growing beauty brand across Kerala and Tamil Nadu. Together, we continue to set high standards in the industry through expert services, strong team presence, and professional excellence.
+              We master both <span className="text-navy font-semibold">Airbrush and Signature Makeup</span> techniques — each chosen to suit your skin, event, and vision. Beyond our main studio in Kerala, Nizan Makeovers founded <span className="text-navy font-semibold">Team N Makeovers</span>, a thriving beauty brand now present across Kerala and Tamil Nadu. Together, we've transformed over 2,000 brides and continue to set the standard for luxury bridal artistry in South Asia.
             </motion.p>
 
             {/* Specialties grid */}
